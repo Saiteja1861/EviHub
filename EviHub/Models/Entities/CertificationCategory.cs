@@ -8,6 +8,6 @@ namespace EviHub.Models.Entities
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
         //Navigation Category
-        public ICollection<Certification> Certifications { get; set; }
+        //public ICollection<Certification> Certifications { get; set; }
     }
 }

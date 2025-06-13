@@ -15,7 +15,7 @@ namespace Evihub.Controllers
             _service = service;
         }
         [HttpGet]
-        public async Task<IActionResult> GetAllProposals()=> Ok(await _service.GetAllProposalslAsync());
+        public async Task<IActionResult> GetAllProposals() => Ok(await _service.GetAllProposalslAsync());
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetProposalById(int id)
@@ -29,15 +29,15 @@ namespace Evihub.Controllers
             return Ok(proposal);
         }
         [HttpPost]
-        public async Task<IActionResult> AddProposal(ProposalDTO dto) 
-            {
+        public async Task<IActionResult> AddProposal(ProposalDTO dto)
+        {
             dto.EmpId = 1001;
-                var created = await _service.AddAsync(dto);
+            var created = await _service.AddAsync(dto);
             //var res = GetProposalsByempid(dto.EmpId);
-                return Ok(created);
-            }
+            return Ok(created);
+        }
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id,[FromBody]ProposalDTO dto)
+        public async Task<IActionResult> Update(int id, [FromBody] ProposalDTO dto)
         {
 
             await _service.UpdateProposalAsync(id, dto);
@@ -45,7 +45,7 @@ namespace Evihub.Controllers
 
         }
         [HttpDelete("{id}")]
-        public async Task<IActionResult>  Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             if (id == 0) return BadRequest();
             var deleted = await _service.DeleteProposalAsync(id);
@@ -57,6 +57,13 @@ namespace Evihub.Controllers
             var res = await _service.getAllProposalsByEmpId(id);
             return Ok(res);
         }
+        [HttpGet("Allproposals")]
+        public async Task<ActionResult<List<ProposalteamsDTO>>> GetProposalswithteams()
+        {
+            var result = await _service.GetProposalteams();
+            return Ok(result);
+        }
+
 
     }
 }

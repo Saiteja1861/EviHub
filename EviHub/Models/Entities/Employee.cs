@@ -31,6 +31,8 @@ namespace EviHub.Models.Entities
         //public int CertificationProgressId { get; set; }//FK
         public string EmergencyContact { get; set; }
         public bool? IsAdmin { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
         
         
         public virtual Manager Manager { get; set; }//Manager of Employee

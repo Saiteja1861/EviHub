@@ -54,6 +54,8 @@ builder.Services.AddScoped<IDesignationRepository, DesignationRepository>();
 builder.Services.AddScoped<IAdminService, AdminService>();
 builder.Services.AddScoped<IManagerRepository, ManagerRepository>();
 builder.Services.AddScoped<IManagerService, ManagerService>();
+builder.Services.AddScoped<EviHub.Repositories.IProposalWorkRepository, ProposalWorkRepository>();
+builder.Services.AddScoped<EviHub.Services.IProposalWorkService, ProposalWorkService>();
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 var app = builder.Build();

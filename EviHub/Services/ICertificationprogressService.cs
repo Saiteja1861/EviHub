@@ -12,7 +12,7 @@ namespace Evihub.Services
         Task<bool> UpdateAsync(int id,UpdateCertificationprogressDTO dto); 
         Task<bool> DeleteAsync(int id);
         Task<IEnumerable<CertificationprogressDTO>> GetByEmployeeId(int id);
-        Task<IEnumerable<CertificationprogressDTO>> GetByCertificationId(int id);
+       Task<IEnumerable<CertificationprogressDTO>> GetByCertificationId(int id);
 
 
 
