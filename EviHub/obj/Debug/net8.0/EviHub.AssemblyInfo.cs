@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EviHub")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aaa228ecf0dbafb5963c3d3c9c2260d13d90480d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+890490ba27e338c1f520af86b1bac8e6921954ac")]
 [assembly: System.Reflection.AssemblyProductAttribute("EviHub")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EviHub")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

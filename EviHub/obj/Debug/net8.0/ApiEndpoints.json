@@ -395,6 +395,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "EviHub.Controllers.authController",
+    "Method": "PostEmployee",
+    "RelativePath": "api/auth/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "EviHub.DTOs.EmployeeDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Evihub.Controllers.CertificationController",
     "Method": "GetAllCertifications",
     "RelativePath": "api/Certification",
@@ -540,22 +556,6 @@
     "ContainingType": "Evihub.Controllers.CertificationCategoryController",
     "Method": "GetByid",
     "RelativePath": "api/CertificationCategory/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Evihub.Controllers.CertificationCategoryController",
-    "Method": "GetCertifications",
-    "RelativePath": "api/CertificationCategory/{id}/certifications",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -931,6 +931,26 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Evihub.Controllers.ProposalController",
+    "Method": "GetProposalswithteams",
+    "RelativePath": "api/Proposal/Allproposals",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[EviHub.DTOs.ProposalteamsDTO, EviHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Evihub.Controllers.ProposalController",

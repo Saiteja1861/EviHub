@@ -632,6 +632,37 @@
         }
       }
     },
+    "/api/auth/register": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmployeeDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmployeeDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmployeeDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Certification": {
       "get": {
         "tags": [
@@ -858,29 +889,6 @@
       }
     },
     "/api/CertificationCategory/{id}": {
-      "get": {
-        "tags": [
-          "CertificationCategory"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/CertificationCategory/{id}/certifications": {
       "get": {
         "tags": [
           "CertificationCategory"
@@ -1499,6 +1507,44 @@
         }
       }
     },
+    "/api/Proposal/Allproposals": {
+      "get": {
+        "tags": [
+          "Proposal"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProposalteamsDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProposalteamsDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProposalteamsDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/ProposalWork": {
       "get": {
         "tags": [
@@ -1844,10 +1890,6 @@
             "type": "string",
             "nullable": true
           },
-          "categoryId": {
-            "type": "integer",
-            "format": "int32"
-          },
           "isActive": {
             "type": "boolean"
           }
@@ -1871,15 +1913,11 @@
             "type": "integer",
             "format": "int32"
           },
-          "employeeId": {
+          "empId": {
             "type": "integer",
             "format": "int32"
           },
-          "startDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "endDate": {
+          "completionDate": {
             "type": "string",
             "format": "date-time",
             "nullable": true
@@ -1964,6 +2002,14 @@
           },
           "isAdmin": {
             "type": "boolean",
+            "nullable": true
+          },
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
             "nullable": true
           }
         },
@@ -2122,6 +2168,47 @@
         },
         "additionalProperties": false
       },
+      "ProposalteamsDTO": {
+        "type": "object",
+        "properties": {
+          "proposalId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "proposalName": {
+            "type": "string",
+            "nullable": true
+          },
+          "proposalDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "proposalDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "theme": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "submitter": {
+            "type": "string",
+            "nullable": true
+          },
+          "teams": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "SkillDTO": {
         "type": "object",
         "properties": {
@@ -2149,11 +2236,7 @@
       "UpdateCertificationprogressDTO": {
         "type": "object",
         "properties": {
-          "startDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "endDate": {
+          "completionDate": {
             "type": "string",
             "format": "date-time",
             "nullable": true
