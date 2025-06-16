@@ -9,7 +9,7 @@ namespace EviHub.Models.Entities
         public int CertificationProgressId { get; set; }
         public int CertificationId { get; set; }//FK
         public int EmpId { get; set; }//FK
-        public DateTime? EndDate { get; set; }
+        public DateTime? completionDate { get; set; }
         public string Status { get; set; }
         public string Comments { get; set; }
 

@@ -16,7 +16,6 @@ namespace EviHub.Models.Entities
         public int  AssignedBy { get; set; }
         //Navigation Properties
         [ForeignKey("EmpId")]
-
         public Employee Employee { get; set; }
         [ForeignKey("ProjectId")]
         public Project Project { get; set; }
